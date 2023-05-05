@@ -1,4 +1,4 @@
-from Constants import *
+from config import *
 from telegram import Update
 from telegram.ext import ContextTypes
 

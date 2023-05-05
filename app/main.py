@@ -1,4 +1,4 @@
-from Constants import *
+from config import *
 from Responses import *
 from Commands import *
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
