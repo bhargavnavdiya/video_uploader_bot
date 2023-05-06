@@ -23,11 +23,11 @@ async def m3u8_download_command(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def yt720p_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     video_url = context.args[0]
-    video_bytes = await download_video(video_url)
+    video_bytes = download_video(video_url)
     if video_bytes is not None:
         try:
             await update.message.reply_text("Downloading video...!\nPlease wait...!")
-            await context.bot.send_document(chat_id= update.effective_chat.id, document= video_bytes, filename=f"{video_url.split('=')[-1]}.mp4")
+            await context.bot.send_document(chat_id= update.effective_chat.id, document= video_bytes, filename=f"{video_url.split('=')[-1]}.mp4", timeout = 600)
         except Exception as e:
             await update.message.reply_text("Sorry, Something went wrong.\nPlease, Contact admin for more details")
             print(f"Error is {e}")
