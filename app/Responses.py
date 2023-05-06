@@ -2,6 +2,10 @@ from config import *
 from telegram import Update
 from telegram.ext import ContextTypes
 
+# Enable Logging
+# logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+
 # Function to decide response string
 def handle_response(text: str) -> str:
     processed: str = text.lower()
